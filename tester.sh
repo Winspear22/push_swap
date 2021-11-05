@@ -81,4 +81,29 @@ echo "TEST N° 4"
 echo "TEST N° 5"
 ./push_swap 2 3 1
 echo "${YELLOW}TEST OK${WHITE}"
+echo "${CYAN}          ---- TEST NUMBERS 1 - 4 -----           ${WHITE}"
+echo "TEST N° 1"
+./push_swap 2 1 3 9
+echo "TEST N° 2"
+./push_swap 3 2 -1 1
+echo "TEST N° 3"
+./push_swap 3  4 1 2
+echo "TEST N° 4"
+./push_swap 178 1 3 2
+echo "TEST N° 5"
+./push_swap -2 196 3 1
+echo "${YELLOW}TEST OK${WHITE}"
+echo "${CYAN}          ---- TEST NUMBERS 1 - 5 -----           ${WHITE}"
+echo "TEST N° 1"
+./push_swap 2 1 3 9 -1
+echo "TEST N° 2"
+./push_swap 3 2 -1 1 69
+echo "TEST N° 3"
+./push_swap 3  4 1 42 -1 
+echo "TEST N° 4"
+./push_swap 178 47 3 -2 12 
+echo "TEST N° 5"
+./push_swap -2 196 -3 1 647
+echo "${YELLOW}TEST OK${WHITE}"
+
 

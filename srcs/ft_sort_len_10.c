@@ -53,72 +53,12 @@ int	find_min(t_stack *t_stack)
 	return (a);
 }
 
-/*void    ft_sort_numbers_2(int *stackA, int *stackB, int argc)
-{
-        ra_swap(stackA, stackB, argc);
-}
-
-void    ft_sort_numbers_3(int *stackA, int *stackB, int argc)
-{
-  while (argc - 1)
-  {
-      if ((stackA[0] > stackA[1]) && (stackA[0] < stackA[2]))
-            sa_swap(stackA, argc);
-        else if ((stackA[0] > stackA[1]) && (stackA[0] > stackA[2])
-        && (stackA[1] > stackA[2]))
-        {
-            sa_swap(stackA, argc);
-            renverse_a(stackA);
-        }
-        else if ((stackA[0] > stackA[1]) && (stackA[1] < stackA[2])
-        && (stackA[2] < stackA[0]))
-            ra_swap(stackA, stackB, argc);
-        else if ((stackA[2] < stackA[1]) && (stackA[2] < stackA[1])
-        && (stackA[0] < stackA[1]))
-            renverse_a(stackA, stackB, argc);
-        else if ((stackA[0] < stackA[1]) && (stackA[1] > stackA[2])
-        && (stackA[0] > stackA[2]))
-        {
-            sa_swap(stackA, argc);
-            ra_swap(stackA, stackB, argc);
-        }
-        argc--;
-    }
-}
-
-void    ft_sort_numbers_4(int *stackA, int *stackB, int argc)
-{
-    pb_swap(stackA, stackB, argc);
-    ft_sort_numbers_3(stackA, stackB, argc);
-    pa_swap(stackA, stackB, argc);
-}
-
-void    ft_sort_numbers_5(int *stackA, int *stackB, int argc)
-{
-        pb_swap(stackA, stackB, argc);
-        ft_sort_numbers_4(stackA, stackB, argc);
-        pa_swap(stackA, stackB, argc);
-}
-
-/*void    ft_sort_5_less(int *stackA, int *stackB, int argc)
-{
-    if (argc - 1 == 2)
-        ft_sort_numbers_2(stackA, stackB, argc);
-    else if (argc - 1 == 3)
-        ft_sort_numbers_3(stackA, stackB, argc);
-    else if (argc - 1 == 4)
-        ft_sort_numbers_4(stackA, stackB, argc);
-    else if (argc - 1 == 5)
-        ft_sort_numbers_5(stackA, stackB, argc);
-}*/
-
-
-void	one_two_three_viva_algerie(t_stack *stackA)
+void	ft_sort_two(t_stack *stackA)
 {
 	renverse_a(stackA);
 }
 
-void	two_be_three(t_stack *stackA)
+void	ft_sort_three(t_stack *stackA)
 {
 	int	pos;
 
@@ -146,14 +86,14 @@ void	two_be_three(t_stack *stackA)
 	}
 }
 
-void	citroen_c4(t_stack *stackA, t_stack *stackB)
+void	ft_sort_four(t_stack *stackA, t_stack *stackB)
 {
 	int	pos;
 
 	if (already_try(stackA) == 0)
 	{
 		push_b(stackA, stackB);
-		two_be_three(stackA);
+		ft_sort_three(stackA);
 	}
 	if (stackA->no_try != 1)
 		push_a(stackA, stackB);
@@ -173,7 +113,7 @@ void	citroen_c4(t_stack *stackA, t_stack *stackB)
 	}
 }
 
-void	five_guys_peanuts(t_stack *stackA, t_stack *stackB)
+void	ft_sort_five(t_stack *stackA, t_stack *stackB)
 {	
 	while (stackA->pos < 2)
 	{
@@ -183,7 +123,19 @@ void	five_guys_peanuts(t_stack *stackA, t_stack *stackB)
 			swap_a(stackA);
 		push_b(stackA, stackB);
 	}	
-	two_be_three(stackA);
+	ft_sort_three(stackA);
 	while (stackA->pos > 0)
 		push_a(stackA, stackB);
+}
+
+void	ft_sort_5_less(int argc, t_stack *stackA, t_stack *stackB, t_stack *stackC)
+{	
+	if (argc == 2)
+		ft_sort_two(stackA);
+	else if (argc == 3)
+		ft_sort_three(stackA);
+	else if (argc == 4)
+		ft_sort_four(stackA, stackB);
+	else if (argc == 5)
+		ft_sort_five(stackA, stackB);
 }

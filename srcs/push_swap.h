@@ -125,10 +125,13 @@ void		renverse_a(t_stack *t_stacka);
 void		renverse_b(t_stack *t_stackb);
 void		double_renverse(t_stack *t_stacka, t_stack *t_stackb);
 
-void		one_two_three_viva_algerie(t_stack *t_stacka);
-void		two_be_three(t_stack *t_stacka);
-void		citroen_c4(t_stack *t_stacka, t_stack *t_stackb);
-void		five_guys_peanuts(t_stack *t_stacka, t_stack *t_stackb);
+void		ft_sort_two(t_stack *t_stacka);
+void		ft_sort_three(t_stack *t_stacka);
+void		ft_sort_four(t_stack *t_stacka, t_stack *t_stackb);
+void		ft_sort_five(t_stack *t_stacka, t_stack *t_stackb);
+
+void	ft_init_stack_all(t_stack stackA, t_stack stackB, int argc, char **argv);
+
 
 
 #endif

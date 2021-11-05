@@ -12,18 +12,6 @@
 
 #include "push_swap.h"
 
-void	ft_sort_5_less(int argc, t_stack *stackA, t_stack *stackB, t_stack *stackC)
-{	
-	if (argc == 2)
-		one_two_three_viva_algerie(stackA);
-	else if (argc == 3)
-		two_be_three(stackA);
-	else if (argc == 4)
-		citroen_c4(stackA, stackB);
-	else if (argc == 5)
-		five_guys_peanuts(stackA, stackB);
-}
-
 /*void	ft_sort_5_more(int argc, t_stack *stackA, t_stack *stackB, t_stack *stackC)
 {
 	if (argc > 5)

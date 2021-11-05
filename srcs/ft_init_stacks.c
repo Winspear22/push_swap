@@ -12,45 +12,6 @@
 
 #include "push_swap.h"
 
-/*int *init_stack_A(int argc, char **argv)
-{
-    int i;
-    int j;
-    int *stackA;
-
-    i = 1;
-    j = 0;
-    stackA = (int *)malloc(sizeof(int) * argc + 1);
-	if (!stackA)
-		return (0);
-	while(i <= argc - 1)
-	{
-		stackA[j] = ft_atoi(argv[i]);
-		i++;
-		j++;
-	}
-    return (stackA);
-}
-
-int *init_stack_B(int argc, char **argv)
-{
-    int i;
-    int j;
-    int *stackB;
-
-    i = 0;
-    j = 0;
-    stackB = (int *)malloc(sizeof(int) * argc + 1);
-	if (!stackB)
-		return (0);
-    while (i < argc - 1)
-    {
-        stackB[i] = 0;
-        i++;
-    }
-    return (stackB);
-}*/
-
 void	ft_init_stackA(t_stack *stackA, int argc)
 {
 	stackA->size = argc;
