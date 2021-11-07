@@ -132,6 +132,34 @@ void		ft_sort_five(t_stack *t_stacka, t_stack *t_stackb);
 
 void	ft_init_stack_all(t_stack stackA, t_stack stackB, int argc, char **argv);
 
+void	ten_belles(t_stack *t_stacka, t_stack *t_stackb, t_stack *t_ghost);
+void	insert_inspi_here(t_stack *t_a, t_stack *t_b);
+void	star_on_the_top(t_stack *t_a);
+void	push_or_not_push_thats_the_question(t_stack *t_a, t_stack *t_b);
+void	rb_or_rrb_thats_the_question(t_stack *t_a, t_stack *t_b);
+void	ra_or_rra_thats_the_question(t_stack *t_a, t_stack *t_b);
+
+
+int		is_the_nain_of_stack(t_stack *t_stack, int nbr);
+int		is_the_warrior_of_stack(t_stack *t_stack, int nbr);
+int		find_max(t_stack *t_stack);
+
+void	i_love_renverse_you(t_stack *t_a, t_stack *t_b);
+void	i_love_rotate_you(t_stack *t_a, t_stack *t_b);
+void	this_is_my_choice(t_stack *t_a, t_stack *t_b);
+void	i_dont_know_choose_between_two_beauties(t_stack *t_a, int a);
+int		find_min(t_stack *t_stack);
+int	already_try(t_stack *t_stack);
+
+void	the_best_coup_on_bed(t_stack *t_a, t_stack *t_b);
+int	the_best_coup_on_stacka(t_stack *t_a, t_stack *t_b, int d, int c);
+int	to_have_son_count_on_bed(t_stack *t_a, int med_a, int d);
+int	the_best_coup_on_stackb(t_stack *t_b, int c);
+void	are_you_the_super_count(t_stack *t_b, int count, int c);
+
+void	push_b_only_bads(t_stack *t_a, t_stack *t_b, t_stack *t_g);
+
+
 
 
 #endif

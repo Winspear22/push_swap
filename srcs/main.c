@@ -12,11 +12,11 @@
 
 #include "push_swap.h"
 
-/*void	ft_sort_5_more(int argc, t_stack *stackA, t_stack *stackB, t_stack *stackC)
+void	ft_sort_5_more(int argc, t_stack *stackA, t_stack *stackB, t_stack *stackC)
 {
 	if (argc > 5)
 		ten_belles(stackA, stackB, stackC);
-}*/
+}
 
 long int	ft_atoi_2(const char *str, t_stack *t_a)
 {
@@ -65,8 +65,8 @@ int	main(int argc, char **argv)
 	putintab(&stackC, argv);
 	if (argc - 1 <= 5)
 		ft_sort_5_less(argc - 1, &stackA, &stackB, &stackC);
-	/*else if (argc - 1 >= 5)
-		ft_sort_5_more(argc - 1, &stackA, &stackB, &stackC);*/
+	else if (argc - 1 >= 5)
+		ft_sort_5_more(argc - 1, &stackA, &stackB, &stackC);
 	
 	while(argc - 1)
 	{
