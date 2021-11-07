@@ -24,7 +24,7 @@ int ft_check_int_max(char **argv, int argc)
         k = ft_atoi(argv[i]);
         if (k > 2147483647 || k < -2147483648)
         {
-            ft_putstr_fd("Erreur, int min/max dépassé.\n", 0);
+            ft_putstr_fd("Error\n", STDERR_FILENO);
             return (0);
         }
         i++;
@@ -49,6 +49,6 @@ int ft_check_sort(char **argv, int argc)
             return (1);
         i++;
     }
-    ft_putstr_fd("Erreur, arguments déjà triés.\n", 0);
+    ft_putstr_fd("Error\n", STDERR_FILENO);
     return (0);
 }

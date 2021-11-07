@@ -68,14 +68,14 @@ int	main(int argc, char **argv)
 	else if (argc - 1 >= 5)
 		ft_sort_5_more(argc - 1, &stackA, &stackB, &stackC);
 	
-	while(argc - 1)
+	/*while(argc - 1)
 	{
 		printf("STACK A = %ld\n", stackA.tab[i]);
 		printf("			|		STACK B = %ld\n", stackB.tab[i]);
 
 		i++;
 		argc--;
-	}
+	}*/
 	//ft_free_double_tab(stackA, stackB);*/
 	return (0);
 }

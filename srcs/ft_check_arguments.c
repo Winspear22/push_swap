@@ -16,7 +16,7 @@ int check_nb_arg(int argc)
 {
     if (argc - 1 < 2)
     {
-        ft_putstr_fd("Erreur, il n'y a pas assez d'arguments.\n", 0);
+        ft_putstr_fd("Error\n", STDERR_FILENO);
 		return (0);
     }
     return (1);
@@ -33,9 +33,9 @@ int check_alpha(char **argv)
         j = 0;
         while(argv[i][j])
         {
-            if (ft_isdigit(argv[i][j]) == 0)
+            if (ft_isdigit(argv[i][j]) == 0 || (argv[i][j] == '-' && argv[i][j + 1] == '-'))
             {
-                ft_putstr_fd("Erreur, il y'a une lettre.\n", 0);
+                ft_putstr_fd("Error\n", STDERR_FILENO);
                 return (0);
             }
             j++;
@@ -62,7 +62,7 @@ int check_double(char **argv, int argc)
         {
             if (j == ft_atoi(argv[i + 1]))
             {
-                ft_putstr_fd("Erreur, il y'a un doublon.\n", 0);
+                ft_putstr_fd("Error\n", STDERR_FILENO);
                 return (0);
             }
             i++;
@@ -81,6 +81,11 @@ int ft_check_all(int argc, char **argv)
     int k;
     int l;
     int m;
+
+    j = check_nb_arg(argc);
+    if (j == 0)
+        return (0);
+
 
     k = check_alpha(argv);
     i = check_double(argv, argc);
