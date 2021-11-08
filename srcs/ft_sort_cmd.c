@@ -12,120 +12,59 @@
 
 #include "push_swap.h"
 
-/*int *sa_swap(int *stackA, int argc)
-{
-	int tmp;
-
-	if (argc - 1 == 1 || argc - 1 == 0)
-		exit (0);
-	else
-	{
-		tmp = stackA[0];
-		stackA[0] = stackA[1];
-		stackA[1] = tmp;
-		ft_putstr_fd_fd("sa\n", 0);
-	}
-	return (stackA);
-}*/
-
-void	swap_a(t_stack *stackA)
+void	sa_swap(t_stack *stacka)
 {
 	int	swapper;
 
-	swapper = stackA->tab[stackA->pos];
-	stackA->tab[stackA->pos] = stackA->tab[stackA->pos + 1];
-	stackA->tab[stackA->pos + 1] = swapper;
+	swapper = stacka->tab[stacka->pos];
+	stacka->tab[stacka->pos] = stacka->tab[stacka->pos + 1];
+	stacka->tab[stacka->pos + 1] = swapper;
 	ft_putstr_fd("sa\n", 1);
 }
-/*
-int *sb_swap(int *stackB, int argc)
-{
-	int tmp;
 
-	if (argc - 1 == 1 || argc - 1 == 0)
-		exit (0);
-	else
-	{
-		tmp = stackB[0];
-		stackB[0] = stackB[1];
-		stackB[1] = tmp;
-		ft_putstr_fd("sb\n", 0);
-	}
-	return (stackB);
-}*/
-
-void	swap_b(t_stack *stackB)
+void	sb_swap(t_stack *stackb)
 {
 	int	swapper;
 
-	swapper = stackB->tab[stackB->pos];
-	stackB->tab[stackB->pos] = stackB->tab[stackB->pos + 1];
-	stackB->tab[stackB->pos + 1] = swapper;
+	swapper = stackb->tab[stackb->pos];
+	stackb->tab[stackb->pos] = stackb->tab[stackb->pos + 1];
+	stackb->tab[stackb->pos + 1] = swapper;
 	ft_putstr_fd("sb\n", 1);
 }
 
-/*int *ss_swap(int *stackA, int *stackB, int argc)
-{
-    sa_swap(stackA, argc);
-    sb_swap(stackB, argc);
-    ft_putstr_fd("ss\n", 0);
-	return (stackA);
-}*/
-
-void	double_swap(t_stack *stackA, t_stack *stackB)
+void	ss_swap(t_stack *stacka, t_stack *stackb)
 {
 	int	swapper;
 
-	swapper = stackA->tab[stackA->pos];
-	stackA->tab[stackA->pos] = stackA->tab[stackA->pos + 1];
-	stackA->tab[stackA->pos + 1] = swapper;
-	swapper = stackB->tab[stackB->pos];
-	stackB->tab[stackB->pos] = stackB->tab[stackB->pos + 1];
-	stackB->tab[1] = swapper;
+	swapper = stacka->tab[stacka->pos];
+	stacka->tab[stacka->pos] = stacka->tab[stacka->pos + 1];
+	stacka->tab[stacka->pos + 1] = swapper;
+	swapper = stackb->tab[stackb->pos];
+	stackb->tab[stackb->pos] = stackb->tab[stackb->pos + 1];
+	stackb->tab[1] = swapper;
 	ft_putstr_fd("ss\n", 1);
 }
 
-/*int   *pa_swap(int *stackA, int *stackB, int argc)
-{
-    if (stackB[0])
-	{
-        stackA[0] = stackB[0];
-	}
-	ft_putstr_fd_fd("pa\n", 0);
-	return (stackA);
-}*/
-
-void	push_a(t_stack *stackA, t_stack *stackB)
+void	pa_swap(t_stack *stacka, t_stack *stackb)
 {
 	int	swapper;
-	
-	swapper = stackB->tab[stackB->pos];
-	stackA->tab[stackA->pos - 1] = swapper;
-	stackB->tab[stackB->pos] = 0;
-	stackB->pos++;
-	stackA->pos--;
+
+	swapper = stackb->tab[stackb->pos];
+	stacka->tab[stacka->pos - 1] = swapper;
+	stackb->tab[stackb->pos] = 0;
+	stackb->pos++;
+	stacka->pos--;
 	ft_putstr_fd("pa\n", 1);
 }
 
-/*int   *pb_swap(int *stackA, int *stackB, int argc)
-{
-    if (stackA[0])
-	{
-		stackB[0] = stackA[0];
-        stackB[0] = stackA[0];
-	}
-	ft_putstr_fd_fd("pb\n", 0);
-	return (stackB);
-}*/
-
-void	push_b(t_stack *stackA, t_stack *stackB)
+void	pb_swap(t_stack *stacka, t_stack *stackb)
 {
 	int	swapper;
 
-	swapper = stackA->tab[stackA->pos];
-	stackB->tab[stackB->pos - 1] = swapper;
-	stackA->tab[stackA->pos] = 0;
-	stackA->pos++;
-	stackB->pos--;
+	swapper = stacka->tab[stacka->pos];
+	stackb->tab[stackb->pos - 1] = swapper;
+	stacka->tab[stacka->pos] = 0;
+	stacka->pos++;
+	stackb->pos--;
 	ft_putstr_fd("pb\n", 1);
 }

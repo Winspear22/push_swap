@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_support_len_10_more_2.c                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: adaloui <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/08 21:06:50 by adaloui           #+#    #+#             */
+/*   Updated: 2021/11/08 21:06:52 by adaloui          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	i_dont_know_choose_between_two_beauties(t_stack *t_a, int a)
@@ -15,13 +27,13 @@ void	this_is_my_choice(t_stack *t_a, t_stack *t_b)
 {
 	while (t_a->for_ra > 0 && t_b->for_rb > 0)
 	{
-		double_rotate(t_a, t_b);
+		rr_swap(t_a, t_b);
 		t_a->for_ra--;
 		t_b->for_rb--;
 	}
 	while (t_a->for_rra > 0 && t_b->for_rrb > 0)
 	{
-		double_renverse(t_a, t_b);
+		rrr_swap(t_a, t_b);
 		t_a->for_rra--;
 		t_b->for_rrb--;
 	}
@@ -33,12 +45,12 @@ void	i_love_rotate_you(t_stack *t_a, t_stack *t_b)
 {
 	while (t_a->for_ra > 0 && t_b->for_rb <= 0)
 	{
-		rotate_a(t_a);
+		ra_swap(t_a);
 		t_a->for_ra--;
 	}
 	while (t_a->for_ra <= 0 && t_b->for_rb > 0)
 	{	
-		rotate_b(t_b);
+		rb_swap(t_b);
 		t_b->for_rb--;
 	}
 }
@@ -47,12 +59,12 @@ void	i_love_renverse_you(t_stack *t_a, t_stack *t_b)
 {
 	while (t_a->for_rra > 0 && t_b->for_rrb <= 0)
 	{
-		renverse_a(t_a);
+		rra_swap(t_a);
 		t_a->for_rra--;
 	}
 	while (t_a->for_rra <= 0 && t_b->for_rrb > 0)
 	{
-		renverse_b(t_b);
+		rrb_swap(t_b);
 		t_b->for_rrb--;
 	}
 }

@@ -12,12 +12,6 @@
 
 #include "push_swap.h"
 
-void	ft_sort_5_more(int argc, t_stack *stackA, t_stack *stackB, t_stack *stackC)
-{
-	if (argc > 5)
-		ten_belles(stackA, stackB, stackC);
-}
-
 long int	ft_atoi_2(const char *str, t_stack *t_a)
 {
 	int			i;
@@ -49,65 +43,30 @@ long int	ft_atoi_2(const char *str, t_stack *t_a)
 
 int	main(int argc, char **argv)
 {
-
-	t_stack	stackA;
-	t_stack	stackB;
-	t_stack	stackC;
-	int i = 0;
+	t_stack	stacka;
+	t_stack	stackb;
+	t_stack	stackc;
 
 	if (ft_check_all(argc, argv) == 0)
 		return (0);
-	ft_init_stackA(&stackA, argc);
-	ft_init_stackC(&stackC, argc);
-	ft_init_stackB(&stackB, argc);
-	putintab(&stackA, argv);
-	init_tab(&stackB);
-	putintab(&stackC, argv);
+	ft_init_stacka(&stacka, argc);
+	ft_init_stackc(&stackc, argc);
+	ft_init_stackb(&stackb, argc);
+	putintab(&stacka, argv);
+	init_tab(&stackb);
+	putintab(&stackc, argv);
 	if (argc - 1 <= 5)
-		ft_sort_5_less(argc - 1, &stackA, &stackB, &stackC);
+		ft_sort_5_less(argc - 1, &stacka, &stackb, &stackc);
 	else if (argc - 1 >= 5)
-		ft_sort_5_more(argc - 1, &stackA, &stackB, &stackC);
-	
+		ft_sort_5_more(argc - 1, &stacka, &stackb, &stackc);
 	/*while(argc - 1)
 	{
-		printf("STACK A = %ld\n", stackA.tab[i]);
-		printf("			|		STACK B = %ld\n", stackB.tab[i]);
+		printf("STACK A = %ld\n", stacka.tab[i]);
+		printf("			|		STACK B = %ld\n", stackb.tab[i]);
 
 		i++;
 		argc--;
 	}*/
-	//ft_free_double_tab(stackA, stackB);*/
+	//ft_free_triple_tab(&stacka, &stackb, &stackc);
 	return (0);
 }
-
-/*	sa_swap(stackA, argc);
-	sb_swap(stackB, argc);
-	ss_swap(stackA, stackB, argc);
-	pb_swap(stackA, stackB, argc);
-	ra_swap(stackA, stackB, argc);
-	rb_swap(stackA, stackB, argc);
-	rr_swap(stackA, stackB, argc);
-	rra_swap(stackA, stackB, argc);
-	rrb_swap(stackA, stackB, argc);
-	rrr_swap(stackA, stackB, argc);
-	i = 1;
-	j = 0;
-	while(i <= argc - 1)
-	{
-		printf("place n* %d STACK A = %d\n", k, stackA[j]);
-		printf("place n* %d STACK B = %d\n", k, stackB[j]);
-		i++;
-		j++;
-		k++;
-	ft_free_stack(stackA, argc);
-	i = 1;
-	j = 0;
-	while(i <= argc - 1)
-	{
-		printf("STACK A = %d\n", stackA[j]);
-	//	printf("STACK B = %d\n", stackB[j]);
-		i++;
-		j++;
-		k++;
-	}
-	}*/

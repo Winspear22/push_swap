@@ -15,14 +15,14 @@ NAME_OS = $(shell uname)
 
 ifeq ($(NAME_OS), Darwin)
 	SRC = srcs/main.c srcs/ft_check_arguments.c srcs/ft_sort_cmd.c srcs/ft_sort_cmd_2.c srcs/ft_sort_cmd_3.c \
-	srcs/ft_check_arguments_2.c srcs/ft_init_stacks.c srcs/ft_sort_len_10.c srcs/ft_free_cmd.c srcs/ft_sort_len_10_more.c srcs/ft_support_len_10_more.c srcs/ft_support_len_10_more_2.c srcs/ft_support_len_10_more_3.c srcs/ft_support_len_10_more_4.c
+	srcs/ft_check_arguments_2.c srcs/ft_init_stacks.c srcs/ft_sort_len_5.c srcs/ft_free_cmd.c srcs/ft_sort_len_10_more.c srcs/ft_support_len_10_more.c srcs/ft_support_len_10_more_2.c srcs/ft_support_len_10_more_3.c srcs/ft_support_len_10_more_4.c srcs/ft_support_len_5.c
 NAME_OS = MAC
 endif
 ifeq ($(NAME_OS), Linux)
 	SRC = srcs/ft_free_cmd.c srcs/main.c srcs/ft_check_arguments.c srcs/ft_sort_cmd.c srcs/ft_sort_cmd_2.c srcs/ft_sort_cmd_3.c  \
-	srcs/ft_check_arguments_2.c srcs/ft_init_stacks.c srcs/ft_sort_len_10.c libft/ft_atoi.c libft/ft_putstr_fd.c \
+	srcs/ft_check_arguments_2.c srcs/ft_init_stacks.c srcs/ft_sort_len_5.c libft/ft_atoi.c libft/ft_putstr_fd.c \
 	libft/ft_isdigit.c libft/ft_putchar_fd.c srcs/ft_sort_len_10_more.c srcs/ft_support_len_10_more.c srcs/ft_support_len_10_more_2.c \
-	srcs/ft_support_len_10_more_3.c srcs/ft_support_len_10_more_4.c
+	srcs/ft_support_len_10_more_3.c srcs/ft_support_len_10_more_4.c srcs/ft_support_len_5.c
 
 endif
 

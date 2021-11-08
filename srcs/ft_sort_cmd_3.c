@@ -6,119 +6,71 @@
 /*   By: adaloui <adaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 20:09:08 by adaloui           #+#    #+#             */
-/*   Updated: 2021/10/20 18:10:41 by adaloui          ###   ########.fr       */
+/*   Updated: 2021/11/08 21:03:53 by adaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*int    *rra_swap(int *stackA, int *stackB, int argc)
-{
-    int tmp;
-    int tmp2;
-    int i;
-    int j;
-
-    i = argc - 1;
-    j = argc - 2;
-    while(j > 0)
-    {
-        tmp = stackA[j];
-        stackA[j] = stackA[j - 1];
-        stackA[j - 1] = tmp;
-        j--;
-    }
-    ft_putstr_fd("rra\n", 0);
-    return (stackA);
-}
-
-int    *rrb_swap(int *stackA, int *stackB, int argc)
-{
-    int tmp;
-    int tmp2;
-    int i;
-    int j;
-
-    i = argc - 1;
-    j = argc - 2;
-    while(j > 0)
-    {
-        tmp = stackB[j];
-        stackB[j] = stackB[j - 1];
-        stackB[j - 1] = tmp;
-        j--;
-    }
-    ft_putstr_fd("rrb\n", 0);
-    return (stackB);
-}
-
-int    *rrr_swap(int *stackA, int *stackB, int argc)
-{
-    rra_swap(stackA, stackB, argc);
-    rrb_swap(stackA, stackB, argc);
-    ft_putstr_fd("rrr\n", 0);
-    return (stackA);
-}*/
-
-void	renverse_a(t_stack *stackA)
+void	rra_swap(t_stack *stacka)
 {
 	int	swapper;
 	int	the_last;
 	int	a;
 
-	the_last = stackA->size - 2;
+	the_last = stacka->size - 2;
 	a = the_last;
-	swapper = stackA->tab[the_last];
-	while (a > stackA->pos)
+	swapper = stacka->tab[the_last];
+	while (a > stacka->pos)
 	{
-		stackA->tab[a] = stackA->tab[a - 1];
+		stacka->tab[a] = stacka->tab[a - 1];
 		a--;
 	}
-	stackA->tab[stackA->pos] = swapper;
+	stacka->tab[stacka->pos] = swapper;
 	ft_putstr_fd("rra\n", 1);
 }
 
-void	renverse_b(t_stack *stackB)
+void	rrb_swap(t_stack *stackb)
 {
 	int	swapper;
 	int	the_last;
 	int	a;
 
-	the_last = stackB->size - 2;
+	the_last = stackb->size - 2;
 	a = the_last;
-	swapper = stackB->tab[the_last];
-	while (a > stackB->pos)
+	swapper = stackb->tab[the_last];
+	while (a > stackb->pos)
 	{
-		stackB->tab[a] = stackB->tab[a - 1];
+		stackb->tab[a] = stackb->tab[a - 1];
 		a--;
 	}
-	stackB->tab[stackB->pos] = swapper;
+	stackb->tab[stackb->pos] = swapper;
 	ft_putstr_fd("rrb\n", 1);
 }
 
-void	double_renverse(t_stack *stackA, t_stack *stackB)
+void	rrr_swap(t_stack *stacka, t_stack *stackb)
 {
 	int	swapper;
 	int	the_last;
 	int	a;
 
-	the_last = stackA->size - 2;
+	the_last = stacka->size - 2;
 	a = the_last;
-	swapper = stackA->tab[the_last];
-	while (a > stackA->pos)
+	swapper = stacka->tab[the_last];
+	while (a > stacka->pos)
 	{
-		stackA->tab[a] = stackA->tab[a - 1];
+		stacka->tab[a] = stacka->tab[a - 1];
 		a--;
 	}
-	stackA->tab[stackA->pos] = swapper;
-	the_last = stackB->size - 2;
+	stacka->tab[stacka->pos] = swapper;
+	the_last = stackb->size - 2;
 	a = the_last;
-	swapper = stackB->tab[the_last];
-	while (a > stackB->pos)
+	swapper = stackb->tab[the_last];
+	while (a > stackb->pos)
 	{
-		stackB->tab[a] = stackB->tab[a - 1];
+		stackb->tab[a] = stackb->tab[a - 1];
 		a--;
 	}
-	stackB->tab[stackB->pos] = swapper;
+	stackb->tab[stackb->pos] = swapper;
 	ft_putstr_fd("rrr\n", 1);
 }

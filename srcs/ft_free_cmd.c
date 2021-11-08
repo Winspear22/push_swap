@@ -1,14 +1,20 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_free_cmd.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: adaloui <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/08 21:06:09 by adaloui           #+#    #+#             */
+/*   Updated: 2021/11/08 21:06:11 by adaloui          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_free_double_tab(int *stackA, int *stackB)
+void ft_free_triple_tab(t_stack *stacka, t_stack *stackb, t_stack *stackc)
 {
-    ft_free_single_tab(stackA);
-    ft_free_single_tab(stackB);
-}
-
-void ft_free_single_tab(int *stack)
-{
-    free(stack);
+    free(stacka->tab);
+	free(stackb->tab);
+	free(stackc->tab);
 }
