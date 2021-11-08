@@ -6,7 +6,7 @@
 #    By: adaloui <adaloui@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/04 13:39:14 by adaloui           #+#    #+#              #
-#    Updated: 2021/10/20 17:51:44 by adaloui          ###   ########.fr        #
+#    Updated: 2021/11/08 17:15:24 by adaloui          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,8 @@ NAME_OS = $(shell uname)
 
 ifeq ($(NAME_OS), Darwin)
 	SRC = srcs/main.c srcs/ft_check_arguments.c srcs/ft_sort_cmd.c srcs/ft_sort_cmd_2.c srcs/ft_sort_cmd_3.c \
-	srcs/ft_check_arguments_2.c srcs/ft_init_stacks.c srcs/ft_sort_len_10.c srcs/ft_free_cmd.c srcs/ft_sort_len_10_more.c srcs/ft_support_len_10_more.c srcs/ft_support_len_10_more_2.c
-	NAME_OS = MAC
+	srcs/ft_check_arguments_2.c srcs/ft_init_stacks.c srcs/ft_sort_len_10.c srcs/ft_free_cmd.c srcs/ft_sort_len_10_more.c srcs/ft_support_len_10_more.c srcs/ft_support_len_10_more_2.c srcs/ft_support_len_10_more_3.c srcs/ft_support_len_10_more_4.c
+NAME_OS = MAC
 endif
 ifeq ($(NAME_OS), Linux)
 	SRC = srcs/ft_free_cmd.c srcs/main.c srcs/ft_check_arguments.c srcs/ft_sort_cmd.c srcs/ft_sort_cmd_2.c srcs/ft_sort_cmd_3.c  \
