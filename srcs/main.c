@@ -59,14 +59,6 @@ int	main(int argc, char **argv)
 		ft_sort_5_less(argc - 1, &stacka, &stackb, &stackc);
 	else if (argc - 1 >= 5)
 		ft_sort_5_more(argc - 1, &stacka, &stackb, &stackc);
-	/*while(argc - 1)
-	{
-		printf("STACK A = %ld\n", stacka.tab[i]);
-		printf("			|		STACK B = %ld\n", stackb.tab[i]);
-
-		i++;
-		argc--;
-	}*/
-	//ft_free_triple_tab(&stacka, &stackb, &stackc);
+	ft_free_triple_tab(&stacka, &stackb, &stackc);
 	return (0);
 }
