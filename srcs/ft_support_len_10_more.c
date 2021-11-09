@@ -3,57 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   ft_support_len_10_more.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adaloui <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: adaloui <adaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 21:06:32 by adaloui           #+#    #+#             */
-/*   Updated: 2021/11/08 21:06:35 by adaloui          ###   ########.fr       */
+/*   Updated: 2021/11/09 20:49:01 by adaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	find_max(t_stack *t_stack)
+int	ft_nb_inferior_to_tab(t_stack *stacka, int nb)
 {
-	int	a;
+	int	i;
 
-	a = t_stack->pos + 1;
-	t_stack->max = t_stack->tab[t_stack->pos];
-	while (a < t_stack->size - 1)
+	i = stacka->pos;
+	while (i < stacka->size - 1)
 	{
-		if (t_stack->tab[a] > t_stack->max)
-			t_stack->max = t_stack->tab[a];
-		a++;
-	}
-	a = 0;
-	while (t_stack->tab[a] != t_stack->max)
-		a++;
-	return (a);
-}
-
-int	is_the_warrior_of_stack(t_stack *t_stack, int nbr)
-{
-	int	a;
-
-	a = t_stack->pos;
-	while (a < t_stack->size - 1)
-	{
-		if (nbr < t_stack->tab[a])
+		if (nb < stacka->tab[i])
 			return (0);
-		a++;
+		i++;
 	}
 	return (1);
 }
 
-int	is_the_nain_of_stack(t_stack *t_stack, int nbr)
+int	ft_nb_superior_to_tab(t_stack *stacka, int nb)
 {
-	int	a;
+	int	i;
 
-	a = t_stack->pos;
-	while (a < t_stack->size - 1)
+	i = stacka->pos;
+	while (i < stacka->size - 1)
 	{
-		if (nbr > t_stack->tab[a])
+		if (nb > stacka->tab[i])
 			return (0);
-		a++;
+		i++;
 	}
 	return (1);
 }

@@ -3,68 +3,68 @@
 /*                                                        :::      ::::::::   */
 /*   ft_support_len_10_more_2.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adaloui <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: adaloui <adaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 21:06:50 by adaloui           #+#    #+#             */
-/*   Updated: 2021/11/08 21:06:52 by adaloui          ###   ########.fr       */
+/*   Updated: 2021/11/09 21:08:33 by adaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	i_dont_know_choose_between_two_beauties(t_stack *t_a, int a)
+void	ft_choose_ra_rra_plus(t_stack *stacka, int i)
 {
-	int	med;
+	int	j;
 
-	med = ((t_a->size - 1) - ((t_a->size - t_a->pos) / 2));
-	if (a < med)
-		t_a->for_ra++;
+	j = ((stacka->size - 1) - ((stacka->size - stacka->pos) / 2));
+	if (i < j)
+		stacka->ra++;
 	else
-		t_a->for_rra++;
+		stacka->rra++;
 }
 
-void	this_is_my_choice(t_stack *t_a, t_stack *t_b)
+void	ft_choose_rotate_or_renverse(t_stack *stacka, t_stack *stackb)
 {
-	while (t_a->for_ra > 0 && t_b->for_rb > 0)
+	while (stacka->ra > 0 && stackb->rb > 0)
 	{
-		rr_swap(t_a, t_b);
-		t_a->for_ra--;
-		t_b->for_rb--;
+		rr_swap(stacka, stackb);
+		stacka->ra--;
+		stackb->rb--;
 	}
-	while (t_a->for_rra > 0 && t_b->for_rrb > 0)
+	while (stacka->rra > 0 && stackb->rrb > 0)
 	{
-		rrr_swap(t_a, t_b);
-		t_a->for_rra--;
-		t_b->for_rrb--;
+		rrr_swap(stacka, stackb);
+		stacka->rra--;
+		stackb->rrb--;
 	}
-	i_love_rotate_you(t_a, t_b);
-	i_love_renverse_you(t_a, t_b);
+	ft_rotate_stacks(stacka, stackb);
+	ft_renverse_stacks(stacka, stackb);
 }
 
-void	i_love_rotate_you(t_stack *t_a, t_stack *t_b)
+void	ft_rotate_stacks(t_stack *stacka, t_stack *stackb)
 {
-	while (t_a->for_ra > 0 && t_b->for_rb <= 0)
+	while (stacka->ra > 0 && stackb->rb <= 0)
 	{
-		ra_swap(t_a);
-		t_a->for_ra--;
+		ra_swap(stacka);
+		stacka->ra--;
 	}
-	while (t_a->for_ra <= 0 && t_b->for_rb > 0)
+	while (stacka->ra <= 0 && stackb->rb > 0)
 	{	
-		rb_swap(t_b);
-		t_b->for_rb--;
+		rb_swap(stackb);
+		stackb->rb--;
 	}
 }
 
-void	i_love_renverse_you(t_stack *t_a, t_stack *t_b)
+void	ft_renverse_stacks(t_stack *stacka, t_stack *stackb)
 {
-	while (t_a->for_rra > 0 && t_b->for_rrb <= 0)
+	while (stacka->rra > 0 && stackb->rrb <= 0)
 	{
-		rra_swap(t_a);
-		t_a->for_rra--;
+		rra_swap(stacka);
+		stacka->rra--;
 	}
-	while (t_a->for_rra <= 0 && t_b->for_rrb > 0)
+	while (stacka->rra <= 0 && stackb->rrb > 0)
 	{
-		rrb_swap(t_b);
-		t_b->for_rrb--;
+		rrb_swap(stackb);
+		stackb->rrb--;
 	}
 }

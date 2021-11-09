@@ -6,7 +6,7 @@
 /*   By: adaloui <adaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 20:00:05 by adaloui           #+#    #+#             */
-/*   Updated: 2021/11/08 21:03:50 by adaloui          ###   ########.fr       */
+/*   Updated: 2021/11/09 19:24:55 by adaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,23 +28,6 @@ void	ra_swap(t_stack *stacka)
 	}
 	stacka->tab[the_last] = swapper;
 	ft_putstr_fd("ra\n", 1);
-}
-
-void	ra_swap_sp(t_stack *stacka)
-{
-	int	swapper;
-	int	the_last;
-	int	a;
-
-	the_last = stacka->size - 2;
-	a = stacka->pos + 1;
-	swapper = stacka->tab[stacka->pos];
-	while (a <= the_last)
-	{
-		stacka->tab[a - 1] = stacka->tab[a];
-		a++;
-	}
-	stacka->tab[the_last] = swapper;
 }
 
 void	rb_swap(t_stack *stackb)

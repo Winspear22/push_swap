@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_support_len_5.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adaloui <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: adaloui <adaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 21:07:59 by adaloui           #+#    #+#             */
-/*   Updated: 2021/11/08 21:08:02 by adaloui          ###   ########.fr       */
+/*   Updated: 2021/11/09 21:26:41 by adaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	already_try(t_stack *t_stack)
+int	ft_almost_all_sorted(t_stack *t_stack)
 {
 	int	a;
 
@@ -23,7 +23,7 @@ int	already_try(t_stack *t_stack)
 		{
 			if (t_stack->tab[a] < t_stack->tab[a + 1])
 			{
-				t_stack->no_try = 1;
+				t_stack->almost_sorted = 1;
 				return (1);
 			}
 		}
@@ -31,29 +31,42 @@ int	already_try(t_stack *t_stack)
 			return (0);
 		a++;
 	}
-	t_stack->no_try = 1;
+	t_stack->almost_sorted = 1;
 	return (1);
 }
 
-int	find_min(t_stack *t_stack)
+int	ft_find_minimum(t_stack *t_stack)
 {
-	int	a;
+	int	i;
 
-	a = t_stack->pos + 1;
+	i = t_stack->pos + 1;
 	t_stack->min = t_stack->tab[t_stack->pos];
-	while (a < t_stack->size - 1)
+	while (i < t_stack->size - 1)
 	{
-		if (t_stack->tab[a] < t_stack->min)
-			t_stack->min = t_stack->tab[a];
-		a++;
+		if (t_stack->tab[i] < t_stack->min)
+			t_stack->min = t_stack->tab[i];
+		i++;
 	}
-	a = 0;
-	while (t_stack->tab[a] != t_stack->min)
-		a++;
-	return (a);
+	i = 0;
+	while (t_stack->tab[i] != t_stack->min)
+		i++;
+	return (i);
 }
 
-void	ft_sort_two(t_stack *stacka)
+int	ft_find_maximum(t_stack *t_stack)
 {
-	rra_swap(stacka);
+	int	i;
+
+	i = t_stack->pos + 1;
+	t_stack->max = t_stack->tab[t_stack->pos];
+	while (i < t_stack->size - 1)
+	{
+		if (t_stack->tab[i] > t_stack->max)
+			t_stack->max = t_stack->tab[i];
+		i++;
+	}
+	i = 0;
+	while (t_stack->tab[i] != t_stack->max)
+		i++;
+	return (i);
 }

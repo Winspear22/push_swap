@@ -6,39 +6,44 @@
 /*   By: adaloui <adaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 13:45:24 by adaloui           #+#    #+#             */
-/*   Updated: 2021/10/20 19:44:22 by adaloui          ###   ########.fr       */
+/*   Updated: 2021/11/09 19:01:49 by adaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-long int	ft_atoi_2(const char *str, t_stack *t_a)
+void	ft_sort_5_more(int argc, t_stack *stacka,
+	t_stack *stackb, t_stack *stackc)
 {
-	int			i;
-	long int	a;
-	int			signe;
+	ft_sort_ten_and_more(stacka, stackb, stackc);
+}
 
-	i = 0;
-	a = 0;
-	signe = 1;
-	if (str[i] == '\0')
-	{
-		ft_putstr_fd("Error\n", 2);
-		free(t_a->tab);
-		exit(EXIT_FAILURE);
-	}
-	while (str[i] == ' ' || str[i] == '\f' || str[i] == '\n'
-		|| str[i] == '\r' || str[i] == '\t' || str[i] == '\v')
-		i++;
-	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-			signe = -1;
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-		a = a * 10 + str[i++] - 48;
-	return (a * signe);
+void	ft_sort_5_less(int argc, t_stack *stacka,
+		t_stack *stackb, t_stack *stackc)
+{	
+	if (argc == 2)
+		ft_sort_two(stacka);
+	else if (argc == 3)
+		ft_sort_three(stacka);
+	else if (argc == 4)
+		ft_sort_four(stacka, stackb);
+	else if (argc == 5)
+		ft_sort_five(stacka, stackb);
+}
+
+void	ft_init_all_stack(t_stack *stacka, t_stack *stackb,
+	int argc, char **argv)
+{
+	ft_init_stacka(stacka, argc);
+	ft_init_stackb(stackb, argc);
+	ft_mem_init_stacka(stacka, argv);
+	ft_mem_init_stackb(stackb);
+}
+
+void	ft_init_stack_c(t_stack *stackc, int argc, char **argv)
+{
+	ft_init_stackc(stackc, argc);
+	ft_mem_init_stacka(stackc, argv);
 }
 
 int	main(int argc, char **argv)
@@ -49,12 +54,8 @@ int	main(int argc, char **argv)
 
 	if (ft_check_all(argc, argv) == 0)
 		return (0);
-	ft_init_stacka(&stacka, argc);
-	ft_init_stackc(&stackc, argc);
-	ft_init_stackb(&stackb, argc);
-	putintab(&stacka, argv);
-	init_tab(&stackb);
-	putintab(&stackc, argv);
+	ft_init_all_stack(&stacka, &stackb, argc, argv);
+	ft_init_stack_c(&stackc, argc, argv);
 	if (argc - 1 <= 5)
 		ft_sort_5_less(argc - 1, &stacka, &stackb, &stackc);
 	else if (argc - 1 >= 5)

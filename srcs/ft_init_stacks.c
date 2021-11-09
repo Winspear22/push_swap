@@ -6,7 +6,7 @@
 /*   By: adaloui <adaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 16:59:51 by adaloui           #+#    #+#             */
-/*   Updated: 2021/11/08 20:53:17 by adaloui          ###   ########.fr       */
+/*   Updated: 2021/11/09 20:52:05 by adaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ void	ft_init_stacka(t_stack *stacka, int argc)
 	stacka->pos = 0;
 	stacka->max = 0;
 	stacka->min = 0;
-	stacka->no_try = 0;
+	stacka->almost_sorted = 0;
 	stacka->first_bien_tried = 0;
 	stacka->len_of_long_serie = 1;
-	stacka->for_ra = 0;
-	stacka->for_rra = 0;
+	stacka->ra = 0;
+	stacka->rra = 0;
 }
 
 void	ft_init_stackb(t_stack *stackb, int argc)
@@ -31,9 +31,9 @@ void	ft_init_stackb(t_stack *stackb, int argc)
 	stackb->pos = argc - 1;
 	stackb->max = 0;
 	stackb->min = 0;
-	stackb->no_try = 0;
-	stackb->for_rb = 0;
-	stackb->for_rrb = 0;
+	stackb->almost_sorted = 0;
+	stackb->rb = 0;
+	stackb->rrb = 0;
 }
 
 void	ft_init_stackc(t_stack *stackc, int argc)
@@ -42,10 +42,10 @@ void	ft_init_stackc(t_stack *stackc, int argc)
 	stackc->pos = 0;
 	stackc->max = 0;
 	stackc->min = 0;
-	stackc->no_try = 0;
+	stackc->almost_sorted = 0;
 }
 
-void	putintab(t_stack *stacka, char **tab)
+void	ft_mem_init_stacka(t_stack *stacka, char **tab)
 {
 	int	a;
 
@@ -60,7 +60,7 @@ void	putintab(t_stack *stacka, char **tab)
 	}
 }
 
-void	init_tab(t_stack *stackb)
+void	ft_mem_init_stackb(t_stack *stackb)
 {
 	int	a;
 

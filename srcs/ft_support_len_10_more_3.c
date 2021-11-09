@@ -3,97 +3,97 @@
 /*                                                        :::      ::::::::   */
 /*   ft_support_len_10_more_3.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adaloui <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: adaloui <adaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 21:07:06 by adaloui           #+#    #+#             */
-/*   Updated: 2021/11/08 21:07:09 by adaloui          ###   ########.fr       */
+/*   Updated: 2021/11/09 20:49:01 by adaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	are_you_the_super_count(t_stack *t_b, int count, int c)
+void	ft_find_max_int(t_stack *stackb, int count, int c)
 {
-	if (count < t_b->super_count)
+	if (count < stackb->max_int)
 	{
-		t_b->super_count = count;
-		t_b->nb_of_super_count = t_b->tab[c];
-		t_b->pos_of_super_count = c;
-		t_b->count_super_a = t_b->count_a;
-		t_b->count_super_b = t_b->count_b;
+		stackb->max_int = count;
+		stackb->nb_of_max_int = stackb->tab[c];
+		stackb->pos_of_max_int = c;
+		stackb->count_super_a = stackb->count_a;
+		stackb->count_super_b = stackb->count_b;
 	}
 }
 
-int	the_best_coup_on_stackb(t_stack *t_b, int c)
+int	ft_best_count_stackb(t_stack *stackb, int i)
 {
 	int	med_b;
 	int	count;
 
 	count = 0;
-	med_b = ((t_b->size - 1) - ((t_b->size - t_b->pos) / 2));
-	if (c < med_b)
-		count = c - t_b->pos;
+	med_b = ((stackb->size - 1) - ((stackb->size - stackb->pos) / 2));
+	if (i < med_b)
+		count = i - stackb->pos;
 	else
-		count = t_b->size - 1 - c;
-	t_b->count_b = count;
+		count = stackb->size - 1 - i;
+	stackb->count_b = count;
 	return (count);
 }
 
-int	to_have_son_count_on_bed(t_stack *t_a, int med_a, int d)
+int	ft_count_on_stack(t_stack *stacka, int stack_a, int i)
 {
 	int	count;
 
 	count = 0;
-	if (d < med_a)
-		count = d - t_a->pos;
+	if (i < stack_a)
+		count = i - stacka->pos;
 	else
-		count = t_a->size - d;
+		count = stacka->size - i;
 	return (count);
 }
 
-int	the_best_coup_on_stacka(t_stack *t_a, t_stack *t_b, int d, int c)
+int	ft_best_count_stacka(t_stack *stacka, t_stack *stackb, int d, int c)
 {
-	int	med_a;
+	int	stack_a;
 	int	count;
 
 	count = 0;
-	med_a = ((t_a->size - 1) - ((t_a->size - t_a->pos) / 2));
-	if (t_a->tab[d] > t_b->tab[c] && t_a->tab[d - 1] < t_b->tab[c])
-		count += to_have_son_count_on_bed(t_a, med_a, d);
-	else if (is_the_warrior_of_stack(t_a, t_b->tab[c]) == 1
-		&& t_a->tab[d] == t_a->tab[find_min(t_a)])
-		count += to_have_son_count_on_bed(t_a, med_a, d);
-	else if (is_the_nain_of_stack(t_a, t_b->tab[c]) == 1
-		&& t_a->tab[d] == t_a->tab[find_min(t_a)])
-		count += to_have_son_count_on_bed(t_a, med_a, d);
+	stack_a = ((stacka->size - 1) - ((stacka->size - stacka->pos) / 2));
+	if (stacka->tab[d] > stackb->tab[c] && stacka->tab[d - 1] < stackb->tab[c])
+		count += ft_count_on_stack(stacka, stack_a, d);
+	else if (ft_nb_inferior_to_tab(stacka, stackb->tab[c]) == 1
+		&& stacka->tab[d] == stacka->tab[ft_find_minimum(stacka)])
+		count += ft_count_on_stack(stacka, stack_a, d);
+	else if (ft_nb_superior_to_tab(stacka, stackb->tab[c]) == 1
+		&& stacka->tab[d] == stacka->tab[ft_find_minimum(stacka)])
+		count += ft_count_on_stack(stacka, stack_a, d);
 	return (count);
 }
 
-void	the_best_coup_on_bed(t_stack *t_a, t_stack *t_b)
+void	ft_best_count(t_stack *stacka, t_stack *stackb)
 {
-	int	c;
-	int	d;
+	int	i;
+	int	j;
 	int	count;
 
-	c = t_b->pos - 1;
-	while (++c < t_b->size - 1)
+	i = stackb->pos - 1;
+	while (++i < stackb->size - 1)
 	{
-		count = the_best_coup_on_stackb(t_b, c);
-		d = t_a->pos;
-		if (t_a->tab[d] > t_b->tab[c]
-			&& t_a->tab[t_a->size - 2] < t_b->tab[c])
+		count = ft_best_count_stackb(stackb, i);
+		j = stacka->pos;
+		if (stacka->tab[j] > stackb->tab[i]
+			&& stacka->tab[stacka->size - 2] < stackb->tab[i])
 			count++;
 		else
 		{
-			d++;
+			j++;
 			count++;
-			t_b->count_a++;
-			while (d < t_a->size - 1)
+			stackb->count_a++;
+			while (j < stacka->size - 1)
 			{
-				count += the_best_coup_on_stacka(t_a, t_b, d, c);
-				d++;
+				count += ft_best_count_stacka(stacka, stackb, j, i);
+				j++;
 			}
 		}
-		are_you_the_super_count(t_b, count, c);
+		ft_find_max_int(stackb, count, i);
 	}
 }
